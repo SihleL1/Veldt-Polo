@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Schools Water Polo South Africa — design system.
+ * Public pages: warm cream, editorial. Operations (live scoring, analyst): dark forest.
+ * All shadcn tokens are HSL.
+ */
+
+@layer base {
+  :root {
+    --background: 43 44% 93%; /* #F4F1E8 warm cream */
+    --foreground: 150 42% 5%; /* #07110B near-black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 42% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 42% 5%;
+
+    --primary: 120 33% 21%; /* #234723 primary green */
+    --primary-foreground: 43 44% 93%;
+
+    --secondary: 149 48% 12%; /* #102D19 deep forest */
+    --secondary-foreground: 43 44% 93%;
+
+    --muted: 43 25% 87%;
+    --muted-foreground: 150 8% 38%;
+
+    --accent: 43 25% 87%;
+    --accent-foreground: 150 42% 5%;
+
+    --destructive: 0 72% 42%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 43 18% 80%;
+    --input: 43 18% 74%;
+    --ring: 120 33% 21%;
+
+    --radius: 0.375rem;
+  }
+
+  /* Dark operator surfaces: live scoring console + analyst dashboards */
+  .console-dark {
+    --background: 150 42% 5%; /* #07110B */
+    --foreground: 43 44% 93%;
+    --card: 149 48% 8%;
+    --card-foreground: 43 44% 93%;
+    --popover: 149 48% 8%;
+    --popover-foreground: 43 44% 93%;
+    --primary: 43 44% 93%;
+    --primary-foreground: 150 42% 5%;
+    --secondary: 120 33% 21%;
+    --secondary-foreground: 43 44% 93%;
+    --muted: 150 25% 12%;
+    --muted-foreground: 150 12% 62%;
+    --accent: 150 25% 14%;
+    --accent-foreground: 43 44% 93%;
+    --border: 150 20% 18%;
+    --input: 150 20% 24%;
+    --ring: 34 68% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Mono numerals wherever data is displayed */
+  .font-data {
+    @apply font-mono tabular-nums;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
